@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EditorWindow</class>
+ <widget class="QWidget" name="EditorWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>440</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1</width>
+    <height>1</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Lucida Grande</family>
+    <pointsize>13</pointsize>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>A file has been opened...</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QPlainTextEdit" name="plainTextEdit"/>
+   </item>
+  </layout>
+  <action name="actionFile_Info">
+   <property name="text">
+    <string>File Info</string>
+   </property>
+   <property name="toolTip">
+    <string>Gets a load of info about the file.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionDate_Stamp">
+   <property name="text">
+    <string>Date Stamp</string>
+   </property>
+   <property name="toolTip">
+    <string>Adds the current date and time to the text.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionNew_File">
+   <property name="text">
+    <string>New File</string>
+   </property>
+   <property name="toolTip">
+    <string>Creates a new file.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionHard_Wrap">
+   <property name="text">
+    <string>Hard Wrap</string>
+   </property>
+   <property name="toolTip">
+    <string>Hard wraps text, or unwraps text which is already wrapped.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
+   </property>
+  </action>
+  <action name="actionExport_File">
+   <property name="text">
+    <string>Export File</string>
+   </property>
+   <property name="toolTip">
+    <string>Exports the file from NP to elsewhere</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionFind_Replace">
+   <property name="text">
+    <string>Find/Replace</string>
+   </property>
+   <property name="toolTip">
+    <string>Find and replace text. Or just find.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionTrim_lines">
+   <property name="text">
+    <string>Trim lines</string>
+   </property>
+   <property name="toolTip">
+    <string>Trims matching text from the front or end of text.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionWord_Wrap_on_off">
+   <property name="text">
+    <string>Word Wrap on/off</string>
+   </property>
+   <property name="toolTip">
+    <string>Sets word wrap on or off in the editor.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionInsert_on_off">
+   <property name="text">
+    <string>Insert on/off</string>
+   </property>
+   <property name="toolTip">
+    <string>Insert or overwrite? You decide.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+I</string>
+   </property>
+  </action>
+  <action name="actionSet_Translucent">
+   <property name="text">
+    <string>Set Translucent</string>
+   </property>
+   <property name="toolTip">
+    <string>Sets the window to be translucent or opaque.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionSet_Translucent</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>EditorWindow</receiver>
+   <slot>setTranslucent(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>showFileInfo()</slot>
+  <slot>dateStamp()</slot>
+  <slot>newFile()</slot>
+  <slot>hardWordWrap()</slot>
+  <slot>exportFile()</slot>
+  <slot>openFindReplaceDialog()</slot>
+  <slot>openTrimLinesDialog()</slot>
+  <slot>wordWrap(bool)</slot>
+  <slot>insertModeOnOff(bool)</slot>
+  <slot>setTranslucent(bool)</slot>
+ </slots>
+</ui>

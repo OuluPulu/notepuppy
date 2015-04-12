@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.6.2
+Type=Application
+Name=NotePuppy
+Exec=/usr/bin/notepuppy
+Icon=notepuppy
+X-HildonDesk-ShowInToolbar=true
+X-Window-Icon=notepuppy
+X-Window-Icon-Dimmed=notepuppy
+X-Osso-Type=application/x-executable
+X-Osso-Service=com.loralora.notepuppy

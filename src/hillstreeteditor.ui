@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HillStreetEditor</class>
+ <widget class="QMainWindow" name="HillStreetEditor">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>440</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralwidget { background-color: white }</string>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="styleSheet">
+       <string notr="true">#plainTextEdit {
+background-color: white;
+color: black;
+}</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHillStreetEditor">
+    <property name="title">
+     <string>Menu</string>
+    </property>
+    <addaction name="actionNew_File"/>
+    <addaction name="actionNew_Quick_File"/>
+    <addaction name="actionExport_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionSecret_Dev_Method"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionFile_Info"/>
+    <addaction name="separator"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionLine_Trimmer"/>
+    <addaction name="separator"/>
+    <addaction name="actionSet_Translucent_2"/>
+    <addaction name="actionSet_Full_Screen"/>
+    <addaction name="separator"/>
+    <addaction name="actionWord_Wrap"/>
+    <addaction name="actionHard_Wrap"/>
+    <addaction name="actionHard_Unwrap"/>
+    <addaction name="separator"/>
+    <addaction name="actionOverwrite"/>
+    <addaction name="actionDate_Stamp"/>
+   </widget>
+   <widget class="QMenu" name="menuFont">
+    <property name="title">
+     <string>Font</string>
+    </property>
+    <addaction name="actionIncrease_Font_Size"/>
+    <addaction name="actionDecrease_Font_Size"/>
+    <addaction name="actionMonotype_Font"/>
+   </widget>
+   <addaction name="menuHillStreetEditor"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuFont"/>
+  </widget>
+  <action name="actionSet_Translucent_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Set Translucent</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionFile_Info">
+   <property name="text">
+    <string>File Info</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionNew_File">
+   <property name="text">
+    <string>New File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionHard_Wrap">
+   <property name="text">
+    <string>Hard Wrap</string>
+   </property>
+   <property name="toolTip">
+    <string>Wrap it hard, baby.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+R</string>
+   </property>
+  </action>
+  <action name="actionExport_File">
+   <property name="text">
+    <string>Export File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>Find and Replace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionWord_Wrap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Word Wrap</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionOverwrite">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Overwrite</string>
+   </property>
+   <property name="toolTip">
+    <string>Overwrite text, instead of inserting.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSet_Full_Screen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Set Full Screen</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="actionDate_Stamp">
+   <property name="text">
+    <string>Date Stamp</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionHard_Unwrap">
+   <property name="text">
+    <string>Hard Unwrap</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+G</string>
+   </property>
+  </action>
+  <action name="actionMonotype_Font">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Switch Fonts</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionIncrease_Font_Size">
+   <property name="text">
+    <string>Increase Font Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionDecrease_Font_Size">
+   <property name="text">
+    <string>Decrease Font Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionLine_Trimmer">
+   <property name="text">
+    <string>Top and Tail</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionNew_Quick_File">
+   <property name="text">
+    <string>New Quick File</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="actionSecret_Dev_Method">
+   <property name="text">
+    <string>Secret Dev Method</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionSet_Translucent_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>setTranslucent(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWord_Wrap</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>wordWrap(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOverwrite</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>setOverwriteMode(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSet_Full_Screen</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>setFullScreen(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDate_Stamp</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>dateStamp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHard_Wrap</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>hardWrap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNew_File</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>newFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExport_File</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>exportFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHard_Unwrap</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>hardUnwrap()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionMonotype_Font</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>setSecondFont(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionIncrease_Font_Size</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>incrementFontSize()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDecrease_Font_Size</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>decrementFontSize()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFile_Info</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>showFileInfo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFind</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>openFindReplaceDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionLine_Trimmer</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>openTrimLinesDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNew_Quick_File</sender>
+   <signal>triggered()</signal>
+   <receiver>HillStreetEditor</receiver>
+   <slot>quickFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>219</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>setTranslucent(bool)</slot>
+  <slot>showFileInfo()</slot>
+  <slot>dateStamp()</slot>
+  <slot>newFile()</slot>
+  <slot>exportFile()</slot>
+  <slot>openFindReplaceDialog()</slot>
+  <slot>openTrimLinesDialog()</slot>
+  <slot>wordWrap(bool)</slot>
+  <slot>setOverwriteMode(bool)</slot>
+  <slot>setFullScreen(bool)</slot>
+  <slot>hardWrap()</slot>
+  <slot>hardUnwrap()</slot>
+  <slot>setSecondFont(bool)</slot>
+  <slot>incrementFontSize()</slot>
+  <slot>decrementFontSize()</slot>
+  <slot>quickFile()</slot>
+  <slot>secretDevelopmentMethod()</slot>
+ </slots>
+</ui>
