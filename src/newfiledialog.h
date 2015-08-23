@@ -25,6 +25,7 @@ public:
     bool isDirectory();
 public slots:
     void itemClicked(NPFile *item);
+    void insertDate();
 private:
     Ui::NewFileDialog *ui;
     DirectoryTreeLister *dtl;

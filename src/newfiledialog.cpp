@@ -1,6 +1,8 @@
 #include "newfiledialog.h"
 #include "ui_newfiledialog.h"
 
+#include <QDate>
+
 NewFileDialog::NewFileDialog(QDir *rootDirectory, QWidget *parent, QString caption, QString filename, bool dir) :
     QDialog(parent),
     ui(new Ui::NewFileDialog)
@@ -10,12 +12,18 @@ NewFileDialog::NewFileDialog(QDir *rootDirectory, QWidget *parent, QString capti
     this->dtl = new DirectoryTreeLister(ui->treeWidget, DirectoryTreeLister::NewFile);
     dtl->buildList(rootDirectory);
     connect(dtl, SIGNAL(itemClicked(NPFile*)), this, SLOT(itemClicked(NPFile*)));
+    connect(ui->buttonDate, SIGNAL(clicked(bool)), this, SLOT(insertDate()));
     item = 0x0;
     this->rootDir = rootDirectory;
     this->ui->fileLine->setFocus();
     this->ui->fileLine->setText(filename);
     this->ui->fileLine->selectAll();
     if (dir) ui->checkBox->setChecked(true);
+
+    QAction *dateMe = new QAction(this);
+    dateMe->setShortcut(QKeySequence("Ctrl+D"));
+    connect(dateMe, SIGNAL(triggered(bool)), this, SLOT(insertDate()));
+    this->addAction(dateMe);
 }
 
 NewFileDialog::~NewFileDialog()
@@ -27,6 +35,15 @@ NewFileDialog::~NewFileDialog()
 void NewFileDialog::itemClicked(NPFile *item)
 {
     this->item = item;
+}
+
+void NewFileDialog::insertDate()
+{
+    QDate d = QDate::currentDate();
+    QString date = d.toString("yyyy-MM-dd");
+    QString buffer = ui->fileLine->text();
+    buffer += date;
+    ui->fileLine->setText(buffer);
 }
 
 bool NewFileDialog::isDirectory()
