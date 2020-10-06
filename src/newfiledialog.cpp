@@ -1,6 +1,7 @@
 #include "newfiledialog.h"
 #include "ui_newfiledialog.h"
 
+#include <QAction>
 #include <QDate>
 
 NewFileDialog::NewFileDialog(QDir *rootDirectory, QWidget *parent, QString caption, QString filename, bool dir) :
