@@ -68,8 +68,6 @@ HillStreetEditor::HillStreetEditor(NPFile *file, NPSettings *settings, QWidget *
 
 HillStreetEditor::~HillStreetEditor()
 {
-    delete ui;
-    delete jesus;
 }
 
 bool HillStreetEditor::event(QEvent *event)
