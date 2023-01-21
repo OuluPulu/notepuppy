@@ -30,8 +30,13 @@ HillStreetEditor::HillStreetEditor(NPFile *file, NPSettings *settings, QWidget *
     ui->plainTextEdit->setTabStopWidth(settings->GetTabSizePx());
     // create the fonts
     usingFontOne = true;
-    fontOne = ui->plainTextEdit->document()->defaultFont();
-    fontTwo = QFont("Lucida Console", fontOne.pointSize());
+    fontOne = QFont("American Typewriter");
+    int chumpadoo = fontOne.pointSize();
+    chumpadoo+=2;
+    fontOne.setPointSize(chumpadoo);
+    fontTwo = QFont("Helvetica Neue", fontOne.pointSize());  //ui->plainTextEdit->document()->defaultFont();
+
+    ui->plainTextEdit->document()->setDefaultFont(fontOne);
 
     //check if the file is a real one
     if (!fill->exists())
