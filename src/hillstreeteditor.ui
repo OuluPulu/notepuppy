@@ -18,7 +18,7 @@
     <string notr="true">QWidget#centralwidget { background-color: white }</string>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <property name="margin">
+    <property name="margin" stdset="0">
      <number>0</number>
     </property>
     <property name="spacing">
@@ -42,7 +42,7 @@ color: black;
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuHillStreetEditor">
@@ -55,6 +55,7 @@ color: black;
     <addaction name="separator"/>
     <addaction name="actionClose"/>
     <addaction name="actionSecret_Dev_Method"/>
+    <addaction name="actionNew_Meeting"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -253,6 +254,17 @@ color: black;
    </property>
    <property name="shortcut">
     <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionNew_Meeting">
+   <property name="icon">
+    <iconset theme="QIcon::ThemeIcon::WeatherShowers"/>
+   </property>
+   <property name="text">
+    <string>New Meeting</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
    </property>
   </action>
  </widget>

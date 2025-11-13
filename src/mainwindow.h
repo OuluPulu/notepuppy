@@ -67,6 +67,8 @@ public slots:
     void buttonsOnOff(NPFile *item);
     void setTranslucent(bool translucent);
 
+private slots:
+    void on_actionNew_Meeting_triggered();
 };
 
 #endif // MAINWINDOW_H

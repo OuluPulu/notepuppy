@@ -1,5 +1,6 @@
 TARGET      = notepuppy
-HEADERS     += \ 
+HEADERS     += \  \
+    src/meeting.h \
     src/newfiledialog.h \
     src/mainwindow.h \
     src/directorytreelister.h \
@@ -19,6 +20,7 @@ HEADERS     += \
     src/onesmallwindow.h \
     src/smalldevicewindow.h
 SOURCES     +=  qtmain.cpp \
+    src/meeting.cpp \
     src/newfiledialog.cpp \
     src/mainwindow.cpp \
     src/directorytreelister.cpp \
@@ -37,7 +39,8 @@ SOURCES     +=  qtmain.cpp \
     src/newfilewidget.cpp \
     src/onesmallwindow.cpp \
     src/smalldevicewindow.cpp
-FORMS       += \ 
+FORMS       += \
+    src/meeting.ui \
     src/newfiledialog.ui \
     src/mainwindow.ui \
     src/fileinfo.ui \

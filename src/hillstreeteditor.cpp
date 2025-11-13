@@ -665,3 +665,9 @@ void HillStreetEditor::renameFile(QString newFileName)
 {
     Q_UNUSED(newFileName)
 }
+
+void HillStreetEditor::on_actionNew_Meeting_triggered()
+{
+    emit newMeetingSignal();
+}
+

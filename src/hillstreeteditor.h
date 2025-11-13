@@ -73,6 +73,7 @@ signals:
 
     void exportThisFilePlease(QString filename);
     void newFileSignal();
+    void newMeetingSignal();
     void createQuickFile();
 
     void editorActivated(HillStreetEditor *activated);
@@ -84,6 +85,9 @@ protected:
     void changeEvent(QEvent *e);
     bool event(QEvent *event);
     void keyPressEvent(QKeyEvent *kev);
+
+private slots:
+    void on_actionNew_Meeting_triggered();
 
 private:
     Ui::HillStreetEditor *ui;

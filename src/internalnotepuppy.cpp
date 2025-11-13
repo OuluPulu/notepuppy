@@ -1,4 +1,5 @@
 #include "internalnotepuppy.h"
+#include "meeting.h"
 #include "newfiledialog.h"
 
 #include <QFileDialog>
@@ -502,9 +503,21 @@ void InternalNotePuppy::interOpenFile(NPFile *file)
         /* Wire up the powertools */
         connect(ed, SIGNAL(openFindAndReplace()), this, SLOT(openFindAndReplace()));
         connect(ed, SIGNAL(openTopAndTailPlease()), this, SLOT(openTopAndTail()));
+        connect(ed, SIGNAL(newMeetingSignal()), this, SLOT(newMeeting()));
         // emit the notification
         emit editorReadyToOpen(ed);
         kids.insert(filename, ed);
+    }
+}
+
+void InternalNotePuppy::newMeeting()
+{
+    Meeting m;
+    int result = m.exec();
+    if (QDialog::Accepted == result)
+    {
+        QString filename = m.getMeetingName() + ".txt";
+        makeFileHere("Meetings", filename);
     }
 }
 
@@ -585,6 +598,12 @@ void InternalNotePuppy::newFile()
             }
         }
     }
+}
+
+void InternalNotePuppy::makeFileHere(QString directory, QString filename)
+{
+    QString file_name = settings->GetRootFolder()->path() + "/" + directory + "/" + filename;
+    createAndOpenFile(file_name);
 }
 
 void InternalNotePuppy::createAndOpenFile(QString fname)

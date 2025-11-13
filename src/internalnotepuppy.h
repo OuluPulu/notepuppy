@@ -81,6 +81,8 @@ public slots:
     void openFindAndReplace();
     void topAndTailClosed();
     void findAndReplaceClosed();
+    void makeFileHere(QString directory, QString filename);
+    void newMeeting();
 
 signals:
     void editorChanged(HillStreetEditor *newEditor);

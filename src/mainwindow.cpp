@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "meeting.h"
 #include "newfiledialog.h"
 #include <QFile>
 #include <QInputDialog>
@@ -201,5 +202,11 @@ void MainWindow::findAndReplaceClosed()
     }
 
     men.exec(event->globalPos());
+ }
+
+
+ void MainWindow::on_actionNew_Meeting_triggered()
+ {
+     inp->newMeeting();
  }
 
