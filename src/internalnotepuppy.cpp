@@ -401,7 +401,7 @@ void InternalNotePuppy::importFile()
 {
     //open a file browse directory
     QString filename = QFileDialog::getOpenFileName(this->parentWidget, tr("Oh, OK. Which file?"), QDir::homePath());
-    if (NULL != filename)
+    if (!filename.isEmpty())
     {
         QFileInfo file(filename);
         if (file.exists())
@@ -761,7 +761,7 @@ void InternalNotePuppy::renameFile()
         QString newname = nfd.getFile();
         bool isDir = nfd.isDirectory();
 
-        if (NULL != newname)
+        if (!newname.isEmpty())
         {
             bool changed = false;
 

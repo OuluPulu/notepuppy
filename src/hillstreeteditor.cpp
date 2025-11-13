@@ -27,7 +27,7 @@ HillStreetEditor::HillStreetEditor(NPFile *file, NPSettings *settings, QWidget *
     filename = file->getFileName();
     QFile *fill = new QFile(filename, this);
 
-    ui->plainTextEdit->setTabStopWidth(settings->GetTabSizePx());
+    ui->plainTextEdit->setTabStopDistance(settings->GetTabSizePx());
     // create the fonts
     usingFontOne = true;
     fontOne = QFont("American Typewriter");
@@ -293,7 +293,7 @@ void HillStreetEditor::showFileInfo()
     QVariant var(info.size());
     fileinfo.append("Size: ").append(var.toString()).append(" bytes\n");
     QString frmt = settings->GetDateFormat();
-    fileinfo.append("Created: ").append(info.created().toString(frmt)).append("\n");
+    fileinfo.append("Created: ").append(info.birthTime().toString(frmt)).append("\n");
     fileinfo.append("Last modified: ").append(info.lastModified().toString(frmt)).append("\n");
     fileinfo.append("Last read: ").append(info.lastRead().toString(frmt)).append("\n");
     fileinfo.append("Owner: ").append(info.owner()).append("\n");
@@ -361,7 +361,7 @@ void HillStreetEditor::hardWordWrap(bool unwrap)
   */
 QString HillStreetEditor::startBlockify(QString string, bool unblockify)
 {
-    wchar_t split = CARRAIGE_RETUN;
+    QChar split = CARRAIGE_RETUN;
     QString processedLine;
     QStringList components = string.split(split);
     QStringListIterator iterator(components);
